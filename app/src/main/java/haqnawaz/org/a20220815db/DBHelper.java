@@ -58,6 +58,13 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void  deleteStudentR(String RollNo){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        db.delete(STUDENT_TABLE, STUDENT_ROLL+"=?", new String[] {RollNo});
+        db.close();
+    }
+
     public void  updateStudent(StudentModel STUDENTModel, String name){
         SQLiteDatabase db = this.getWritableDatabase();
 
