@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button buttonAdd, buttonViewAll, buttonDelete;
+    Button buttonAdd, buttonViewAll, buttonDelete, buttonUpdate;
     EditText editName, editRollNumber;
     Switch switchIsActive;
     ListView listViewStudent;
@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         buttonAdd = findViewById(R.id.buttonAdd);
+        buttonUpdate = findViewById(R.id.buttonUpdate);
         buttonViewAll = findViewById(R.id.buttonViewAll);
         editName = findViewById(R.id.editTextName);
         editRollNumber = findViewById(R.id.editTextRollNumber);
@@ -46,6 +47,24 @@ public class MainActivity extends AppCompatActivity {
                 }
                 DBHelper dbHelper  = new DBHelper(MainActivity.this);
                 dbHelper.deleteStudent(name);
+            }
+        });
+
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            String name;
+            StudentModel studentModel;
+            @Override
+            public void onClick(View v) {
+                try {
+                    name =  editName.getText().toString();
+                    studentModel = new StudentModel(editName.getText().toString(), Integer.parseInt(editRollNumber.getText().toString()), switchIsActive.isChecked());
+                    //Toast.makeText(MainActivity.this, studentModel.toString(), Toast.LENGTH_SHORT).show();
+                }
+                catch (Exception e){
+                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                }
+                DBHelper dbHelper  = new DBHelper(MainActivity.this);
+                dbHelper.updateStudent(studentModel,name);
             }
         });
 

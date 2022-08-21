@@ -58,6 +58,16 @@ public class DBHelper extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void  updateStudent(StudentModel STUDENTModel, String name){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues cv = new ContentValues();
+        cv.put(STUDENT_NAME, STUDENTModel.getName());
+        cv.put(STUDENT_ROLL, STUDENTModel.getRollNmber());
+        cv.put(STUDENT_ENROLL, STUDENTModel.isEnroll());
+        db.update(STUDENT_TABLE, cv,STUDENT_NAME+"=?", new String[]{name});
+        db.close();
+    }
 
         public ArrayList<StudentModel> getAllStudents() {
 
