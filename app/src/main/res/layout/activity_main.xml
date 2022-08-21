@@ -47,9 +47,10 @@
 
     <Button
         android:id="@+id/buttonViewAll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_width="266dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="164dp"
         android:text="@string/ButtonViewAll"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchStudent" />
@@ -58,9 +59,19 @@
         android:id="@+id/buttonDelete"
         android:layout_width="133dp"
         android:layout_height="56dp"
-        android:layout_marginStart="220dp"
+        android:layout_marginStart="208dp"
         android:layout_marginTop="84dp"
-        android:text="Delete Record"
+        android:text="Delete By Name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switchStudent" />
+
+    <Button
+        android:id="@+id/buttonDelete1"
+        android:layout_width="133dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="84dp"
+        android:text="Delete By Roll No"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchStudent" />
 
@@ -68,28 +79,26 @@
         android:id="@+id/buttonUpdate"
         android:layout_width="133dp"
         android:layout_height="56dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="Update Record"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/switchStudent" />
 
     <Button
         android:id="@+id/buttonAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_width="133dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="56dp"
         android:text="@string/Add"
-        app:layout_constraintBottom_toBottomOf="@+id/buttonViewAll"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonViewAll"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/buttonUpdate"
+        app:layout_constraintTop_toTopOf="@+id/buttonUpdate" />
 
     <ListView
         android:id="@+id/listViewStudent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_marginTop="192dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
